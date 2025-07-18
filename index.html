@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLC - Large Language Companion</title>
+
+  <!-- AOS for animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delius&family=Russo+One&display=swap" rel="stylesheet">
+
+  <!-- ✅ Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind custom config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            delius: ['"Delius"', 'cursive'],
+            russo: ['"Russo One"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .float-burger {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+
+<body class="relative bg-purple-800 text-white overflow-x-hidden">
+
+  <!-- Background video -->
+  <video autoplay muted loop playsinline class="fixed top-0 left-0 w-full h-full object-cover z-0">
+    <source src="public/background.mp4" type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 bg-purple-900/70 z-10"></div>
+
+  <!-- Main content wrapper -->
+  <div
+    class="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 lg:px-[100px] text-center max-w-screen-lg mx-auto">
+
+    <!-- Title -->
+    <h1 class="font-russo text-4xl md:text-6xl font-bold mb-6" data-aos="fade-down">
+      LLC Large Language Companion
+    </h1>
+
+    <!-- Layout Row: Burgers / Ani / Text -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4 w-full max-w-screen-xl mb-10">
+
+      <!-- Left: Burgers -->
+      <div class="flex flex-wrap justify-center lg:justify-end gap-1" data-aos="fade-right">
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+        <span class="text-3xl float-burger">🍔</span>
+
+        <span class="text-3xl float-burger ">🍔</span>
+      </div>
+
+      <!-- Center: Ani -->
+      <div class="flex justify-center">
+        <img src="public/ani.png" alt="Ani" class="w-48 md:w-64 animate-pulse" data-aos="zoom-in" />
+      </div>
+
+      <!-- Right: Description Text -->
+      <div class="text-center lg:text-left px-4">
+        <p class="font-delius text-lg max-w-md mx-auto lg:mx-0" data-aos="fade-left">
+          Ani, the Grok companion, customized for use by some of the biggest companies in the world:
+          McDonald’s, KFC, Burger King, Domino’s, Taco Bell, Subway etc.
+        </p>
+      </div>
+    </div>
+
+    <!-- Coin Address with Copy -->
+    <div
+      class="inline-flex items-center bg-white text-black text-base md:text-lg font-delius rounded-full mb-6 overflow-hidden"
+      data-aos="fade-right">
+      <span class="px-4 py-2 select-none">CA:</span>
+      <span id="ca-only" class="font-mono truncate px-2 py-2">AbQLjZnoigsUwiSCQFe2QQdXXpgodTFehFd7tpQbonk</span>
+      <button onclick="copyCA()"
+        class="px-4 py-2 border-l border-black hover:bg-purple-800 hover:text-white transition text-sm font-delius">
+        Copy
+      </button>
+    </div>
+
+    <script>
+      function copyCA() {
+        const text = document.getElementById('ca-only').textContent.trim();
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Copied: " + text);
+        });
+      }
+    </script>
+
+
+
+    <!-- Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-10">
+      <button
+        class="font-delius bg-transparent text-white border border-white px-4 py-2 rounded-full font-semibold shadow hover:bg-white hover:text-purple-800 transition"
+        data-aos="fade-left">
+        Lets Bonk
+      </button>
+      <button
+        class="font-delius bg-transparent text-white border border-white px-4 py-2 rounded-full font-semibold shadow hover:bg-white hover:text-purple-800 transition"
+        data-aos="fade-right">
+        X Community
+      </button>
+    </div>
+
+    <!-- Carousel -->
+    <div class="w-full max-w-screen-md px-4" data-aos="fade-up">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="public/ani-1.jpg" class="rounded-xl w-full aspect-square object-cover" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/ani-2.jpg" class="rounded-xl w-full aspect-square object-cover" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/ani-3.jpg" class="rounded-xl w-full aspect-square object-cover" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/ani-4.jpg" class="rounded-xl w-full aspect-square object-cover" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/ani-5.jpg" class="rounded-xl w-full aspect-square object-cover" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
