@@ -2,9 +2,6 @@
   "name": "llc-site",
   "version": "1.0.0",
   "main": "tailwind.config.js",
-  "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./styles.css --watch"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
